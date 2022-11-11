@@ -1,7 +1,7 @@
 <?php
 require_once "actions/db_connect.php";
 
-#creating var message so it will change after we add note
+#creating var message so it will change after we add note | if deleted Error Message !!!!
 $message = "";
 
 #Creating Note
