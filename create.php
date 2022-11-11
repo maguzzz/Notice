@@ -1,6 +1,9 @@
 <?php
 require_once "actions/db_connect.php";
 
+#creating var message so it will change after we add note
+$message = "";
+
 #Creating Note
 if ($_POST) {
     $name = $_POST["name"];
@@ -15,7 +18,7 @@ if ($_POST) {
         $message = "Note $name successfully created <br>";
     } else {
         $class = "danger";
-        $message = "Error Creating note";
+        $message = "Error Creating note." . $connect->error;
     }
     mysqli_close($connect);
 }
@@ -24,7 +27,6 @@ if ($_POST) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,7 +49,7 @@ if ($_POST) {
                     <td><input class="form-control" type="text" name="text" placeholder="Note Text"></td>
                 </tr>
                 <td>
-                    <button class="btn btn-success" type="submit">
+                    <button class="btn btn-success" name="btn-create" type="submit">
                         Add Note
                     </button>
                 </td>
@@ -60,7 +62,7 @@ if ($_POST) {
                 </td>
             </table>
 
-            <div class=" alter alert-<?= $class?>">
+            <div class="alter alert-<?= $class?>">
                 <p><?php echo $message; ?></p>
             </div>
 
