@@ -1,6 +1,6 @@
 # Notice
 
-A Website where you can note your wildest ideas | login on diffrent devices
+A Website where you can write down your wildest ideas | login on diffrent devices
 
 Design Ideas
 
